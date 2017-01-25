@@ -1,0 +1,12 @@
+{
+    "name": "weather",
+    "devDependencies": {
+        "ts-loader": "latest",
+        "typescript": "latest",
+        "webpack": "latest",
+        "webpack-fail-plugin": "latest"
+    },
+    "scripts": {
+        "build": "webpack || true"
+    }
+}

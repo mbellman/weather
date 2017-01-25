@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"experimentalDecorators": true,
+		"noEmitOnError": true,
+		"noImplicitReturns": true,
+        "baseUrl": "src"
+	},
+    "files": [
+        "index.ts"
+    ],
+	"exclude": [
+		"node_modules"
+	]
+}
