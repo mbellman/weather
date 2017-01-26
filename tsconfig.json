@@ -3,7 +3,8 @@
 		"experimentalDecorators": true,
 		"noEmitOnError": true,
 		"noImplicitReturns": true,
-        "baseUrl": "src"
+        "baseUrl": "src",
+		"lib": ["dom", "es2015"]
 	},
     "files": [
         "index.ts"

@@ -16,3 +16,5 @@ export interface Area {
 }
 
 export interface Rectangle extends Point, Area {}
+
+export type IntArray2D = Array<Array<number>>;
