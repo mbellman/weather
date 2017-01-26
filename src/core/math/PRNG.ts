@@ -1,15 +1,15 @@
 export default class PRNG {
 	private seed: number = Date.now();
 
-    public setSeed (string: string): void {
-        this.seed = this.stringToSeed(string);
-    }
+	public setSeed (string: string): void {
+		this.seed = this.stringToSeed(string);
+	}
 
-    public random (low?: number, high?: number): number {
+	public random (low?: number, high?: number): number {
 		this.seed = this.getNextSeed();
 
 		return this.getSeedRatio();
-    }
+	}
 
 	private getNextSeed (): number {
 		return (this.seed * 9999) % Number.MAX_SAFE_INTEGER;
@@ -19,7 +19,7 @@ export default class PRNG {
 		return this.seed / Number.MAX_SAFE_INTEGER;
 	}
 
-    private stringToSeed (string: string): number {
+	private stringToSeed (string: string): number {
 		const len: number = string.length;
 		let codes: Array<number> = [];
 		let sum: number = 0;
@@ -39,5 +39,5 @@ export default class PRNG {
 		}
 
 		return Number(output) % Number.MAX_SAFE_INTEGER;
-    }
+	}
 }
