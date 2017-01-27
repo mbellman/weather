@@ -23,7 +23,7 @@ export default class Terrain {
 		const cycles: number = this.configuration.recursion;
 
 		this.initializeMap();
-		this.setCornerElevations();
+		this.initializeCornerElevations();
 
 		for (let i = 1; i <= cycles; i++) {
 			this.runGenerationCycle(i);
@@ -36,7 +36,7 @@ export default class Terrain {
 		return Math.pow(2, r) + 1;
 	}
 
-	private getRadiusInCycle (cycle: number): number {
+	private getDistanceInCycle (cycle: number): number {
 		const mapSize: number = this.getMapSize();
 
 		return (mapSize - 1) / Math.pow(2, cycle);
@@ -62,9 +62,8 @@ export default class Terrain {
 		}
 	}
 
-	private setCornerElevations (): void {
-		const min: number = this.configuration.minimum;
-		const max: number = this.configuration.maximum;
+	private initializeCornerElevations (): void {
+		const { minimum: min, maximum: max } = this.configuration;
 		const N: number = this.getMapSize() - 1;
 
 		this.setTile(0, 0, this.prng.random(min, max));
@@ -74,7 +73,7 @@ export default class Terrain {
 	}
 
 	private runGenerationCycle (cycle: number): void {
-		const radius: number = this.getRadiusInCycle(cycle);
+		const distance: number = this.getDistanceInCycle(cycle);
 		const moves: number = this.getMovesInCycle(cycle);
 		const rows: number = Math.sqrt(moves);
 
@@ -84,16 +83,16 @@ export default class Terrain {
 				y: 0	
 			};
 
-			this.generateSquare(tile, radius);
-			this.generateDiamond(tile, radius);
+			this.generateSquare(tile, distance);
+			this.generateDiamond(tile, distance);
 		}
 	}
 
-	private generateSquare (center: Point, radius: number): void {
+	private generateSquare (center: Point, distance: number): void {
 
 	}
 
-	private generateDiamond (center: Point, radius: number): void {
+	private generateDiamond (center: Point, distance: number): void {
 
 	}
 }
