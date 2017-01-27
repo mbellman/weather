@@ -5,10 +5,23 @@ export default class PRNG {
 		this.seed = this.stringToSeed(string);
 	}
 
-	public random (low?: number, high?: number): number {
+	public random (low: number = 0, high: number = 1): number {
 		this.seed = this.getNextSeed();
 
-		return this.getSeedRatio();
+		const isDefaultRange: boolean = (low === 0 && high === 1);
+
+		if (isDefaultRange) {
+			return this.getSeedRatio();
+		}
+
+		return this.getRangedRandomInteger(low, high);
+	}
+
+	private getRangedRandomInteger (low: number, high: number): number {
+		const seedRatio: number = this.getSeedRatio();
+		const range: number = high - low;
+
+		return low + Math.floor(seedRatio * (range + 1));
 	}
 
 	private getNextSeed (): number {
@@ -20,22 +33,22 @@ export default class PRNG {
 	}
 
 	private stringToSeed (string: string): number {
-		const len: number = string.length;
+		const length: number = string.length;
 		let codes: Array<number> = [];
 		let sum: number = 0;
 		let output: string = '';
 
-		for (let i = 0; i < len; i++) {
-			let v = string.charCodeAt(i);
-			codes[i] = v;
-			sum += (v + 1);
+		for (let i = 0; i < length; i++) {
+			let c: number = string.charCodeAt(i);
+			codes[i] = c;
+			sum += (c + 1);
 		}
 
 		sum *= sum;
 
-		for (let i = 0; i < len; i++) {
-			let v = codes[i];
-			output += (((sum % v) ^ v) % v);
+		for (let i = 0; i < length; i++) {
+			let c: number = codes[i];
+			output += (((sum % c) ^ c) % c);
 		}
 
 		return Number(output) % Number.MAX_SAFE_INTEGER;
