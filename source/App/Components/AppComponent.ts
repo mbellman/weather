@@ -11,7 +11,7 @@ export default class AppComponent {
   public number: number;
   private _prng: PRNG = new PRNG();
 
-  public randomizeNumber (e: UIEvent): void {
+  public randomizeNumber (): void {
     this.number = this._prng.random(0, 100);
   }
 }
