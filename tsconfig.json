@@ -1,14 +1,31 @@
 {
 	"compilerOptions": {
+		"baseUrl": "./source",
+		"downlevelIteration": true,
+		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
+		"lib": [
+			"dom",
+			"es2015"
+		],
+		"module": "commonjs",
 		"noEmitOnError": true,
-		"noImplicitReturns": true,
-        "baseUrl": "src",
-		"lib": ["dom", "es2015"]
+		"noImplicitAny": true,
+		"paths": {
+			"@components/*": ["App/Components/*"],
+			"@core/*": ["Core/*"],
+			"@modules/*": ["App/Modules/*"],
+			"@styles/*": ["App/Styles/*"]
+		},
+		"plugins": [
+			{ "name": "@angular/language-service" }
+		],
+		"sourceMap": true,
+		"target": "es5"
 	},
-    "files": [
-        "index.ts"
-    ],
+	"include": [
+		"source/index.ts"
+	],
 	"exclude": [
 		"node_modules"
 	]

@@ -1,12 +1,40 @@
 {
     "name": "weather",
-    "devDependencies": {
-        "ts-loader": "latest",
-        "typescript": "latest",
-        "webpack": "latest",
-        "webpack-fail-plugin": "latest"
-    },
     "scripts": {
-        "build": "webpack || true"
+        "build": "webpack --config webpack/build.config.js",
+        "demo": "webpack-dev-server --open --config webpack/demo.config.js",
+        "analyze": "yarn build && webpack-bundle-analyzer analysis/stats.json"
+    },
+    "devDependencies": {
+        "@angular/cli": "1.7.3",
+        "@angular/language-service": "^5.2.8",
+        "css-loader": "^0.28.5",
+        "friendly-errors-webpack-plugin": "^1.6.1",
+        "less": "^2.7.2",
+        "less-loader": "^4.0.5",
+        "style-loader": "^0.18.2",
+        "ts-loader": "^3.5.0",
+        "tsconfig-paths-webpack-plugin": "^2.0.0",
+        "typescript": "^2.7.2",
+        "uglifyjs-webpack-plugin": "^1.2.2",
+        "webpack": "^3.10.0",
+        "webpack-bundle-analyzer": "^2.11.1",
+        "webpack-cli": "^1.0.0",
+        "webpack-dev-server": "^2.11.2"
+    },
+    "dependencies": {
+        "@angular/common": "^5.2.8",
+        "@angular/compiler": "^5.2.8",
+        "@angular/core": "^5.2.8",
+        "@angular/forms": "^5.2.8",
+        "@angular/http": "^5.2.8",
+        "@angular/platform-browser": "^5.2.8",
+        "@angular/platform-browser-dynamic": "^5.2.8",
+        "@angular/router": "^5.2.8",
+        "angular-in-memory-web-api": "^0.5.3",
+        "core-js": "^2.5.3",
+        "rxjs": "^5.5.6",
+        "systemjs": "^0.21.0",
+        "zone.js": "^0.8.20"
     }
 }
