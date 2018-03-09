@@ -12,6 +12,7 @@
 		"noEmitOnError": true,
 		"noImplicitAny": true,
 		"paths": {
+			"@app/*": ["App/*"],
 			"@components/*": ["App/Components/*"],
 			"@core/*": ["Core/*"],
 			"@modules/*": ["App/Modules/*"],

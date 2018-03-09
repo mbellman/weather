@@ -1,0 +1,28 @@
+@import 'mixins.less';
+
+.tab-option {
+  align-items: center;
+  background-color: #88a;
+  color: #ddd;
+  cursor: pointer;
+  display: inline-flex;
+  font: 16px Arial;
+  height: 100%;
+  margin: 0 2px;
+  padding: 0 20px;
+  .transition(all, 0.1s);
+
+  &:hover,
+  &.selected {
+    background-color: #779;
+  }
+
+  &:hover {
+    box-shadow: 0 0 5px 0 #668 inset;
+  }
+
+  &.selected {
+    box-shadow: 0 0 10px 0 #557 inset;
+    color: #fff;
+  }
+}

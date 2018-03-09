@@ -1,10 +1,13 @@
 import AppComponent from '@components/AppComponent';
-import { BrowserModule } from '@angular/platform-browser';
+import TabBarComponent from '@components/TabBarComponent';
+import UIModule from '@modules/UIModule';
 import { NgModule } from '@angular/core';
 
 @NgModule({
-  bootstrap: [ AppComponent ],
+  imports: [
+    UIModule
+  ],
   declarations: [ AppComponent ],
-  imports: [ BrowserModule ]
+  bootstrap: [ AppComponent ]
 })
 export default class AppModule { }
