@@ -1,23 +1,23 @@
 import WeatherModel from '@core/Simulation/WeatherModel';
+import { Callback, Final } from 'trampoline-framework';
 import { Injectable } from '@angular/core';
-import { Callback } from 'trampoline-framework';
 
 @Injectable()
-export default abstract class AbstractWeatherService {
+export default abstract class AbstractWeatherService<TServiceData> {
   protected static weatherModel: WeatherModel = new WeatherModel();
   protected weatherModel: WeatherModel = AbstractWeatherService.weatherModel;
 
-  public abstract fetchData (...args: any[]): Promise<any>;
+  public abstract fetchData (...args: any[]): Promise<TServiceData>;
 
-  public subscribe (subscriber: Callback<any>): void {
+  @Final public subscribe (subscriber: Callback<TServiceData>): void {
     this.weatherModel.subscribe(
-      this.getFetchedDataCallbackForSubscriber(subscriber)
+      this.getWeatherModelUpdateCallbackForSubscriber(subscriber)
     );
   }
 
-  private getFetchedDataCallbackForSubscriber (subscriber: Callback<any>): Callback<any> {
+  private getWeatherModelUpdateCallbackForSubscriber (subscriber: Callback<TServiceData>): Callback<any> {
     return async () => {
-      const data = this.fetchData();
+      const data = await this.fetchData();
 
       subscriber(data);
     };
