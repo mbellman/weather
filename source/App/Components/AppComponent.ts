@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import '@styles/AppStyles.less';
+import CurrentWeatherService from '@app/Services/CurrentWeatherService';
 
 @Component({
   selector: 'app',

@@ -15,4 +15,4 @@ import { NgModule } from '@angular/core';
     TabOptionComponent
   ]
 })
-export default class UIModule { }
+export default class TabBarModule { }

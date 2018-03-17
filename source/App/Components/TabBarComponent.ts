@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { ITabOption } from '@app/Types';
+import CurrentWeatherService from '@services/CurrentWeatherService';
+import { Component, NgModule } from '@angular/core';
+import { ITabOption } from '@app/types';
 import '@styles/TabBarStyles.less';
 
 @Component({
@@ -25,7 +26,15 @@ export default class TabBarComponent {
     { text: 'Cities' }
   ];
 
+  public constructor (currentWeatherService: CurrentWeatherService) {
+    currentWeatherService.subscribe(this.onCurrentWeatherUpdate);
+  }
+
   private onClickTab (index: number): void {
     this.selectedTabIndex = index;
+  }
+
+  private onCurrentWeatherUpdate (): void {
+    console.log('Current weather updated!');
   }
 }

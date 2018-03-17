@@ -11,6 +11,6 @@ import '@styles/TabOptionStyles.less';
   `
 })
 export default class TabOptionComponent {
-  @Input() private selected: boolean;
-  @Input() private text: string;
+  @Input() public selected: boolean;
+  @Input() public text: string;
 }

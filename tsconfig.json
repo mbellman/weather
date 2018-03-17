@@ -16,6 +16,8 @@
 			"@components/*": ["App/Components/*"],
 			"@core/*": ["Core/*"],
 			"@modules/*": ["App/Modules/*"],
+			"@plugins/*": ["Plugins/*"],
+			"@services/*": ["App/Services/*"],
 			"@styles/*": ["App/Styles/*"]
 		},
 		"plugins": [
