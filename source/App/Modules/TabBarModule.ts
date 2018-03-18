@@ -1,5 +1,7 @@
+import LocalWeatherBlockComponent from '@components/LocalWeatherBlockComponent';
 import TabBarComponent from '@components/TabBarComponent';
 import TabOptionComponent from '@components/TabOptionComponent';
+import WeatherServiceModule from '@modules/WeatherServiceModule';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -12,7 +14,8 @@ import { NgModule } from '@angular/core';
   ],
   declarations: [
     TabBarComponent,
-    TabOptionComponent
+    TabOptionComponent,
+    LocalWeatherBlockComponent
   ]
 })
 export default class TabBarModule { }

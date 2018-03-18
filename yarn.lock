@@ -6903,9 +6903,9 @@ tough-cookie@~2.3.0, tough-cookie@~2.3.3:
   dependencies:
     punycode "^1.4.1"
 
-trampoline-framework@^0.8.0:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/trampoline-framework/-/trampoline-framework-0.8.1.tgz#7d028de99b69fc4c0a6b31cee77fbba09829d57e"
+trampoline-framework@^0.8.2:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/trampoline-framework/-/trampoline-framework-0.8.2.tgz#4d6480fde79067105de8ade8fc583f14f9975be7"
   dependencies:
     reflect-metadata "^0.1.12"
 

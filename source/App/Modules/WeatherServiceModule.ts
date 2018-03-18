@@ -1,12 +1,12 @@
-import CloudRadarWeatherService from '@services/CloudRadarWeatherService';
-import CurrentWeatherService from '@services/CurrentWeatherService';
-import ForecastWeatherService from '@services/ForecastWeatherService';
-import PrecipitationRadarWeatherService from '@services/PrecipitationRadarWeatherService';
-import { NgModule } from '@angular/core';
+import { CloudRadarWeatherService } from '@services/CloudRadarWeatherService';
+import { ForecastWeatherService } from '@services/ForecastWeatherService';
+import { LocalWeatherService } from '@services/LocalWeatherService';
+import { NgModule, NgZone } from '@angular/core';
+import { PrecipitationRadarWeatherService } from '@services/PrecipitationRadarWeatherService';
 
 @NgModule({
   providers: [
-    CurrentWeatherService,
+    LocalWeatherService,
     ForecastWeatherService,
     CloudRadarWeatherService,
     PrecipitationRadarWeatherService

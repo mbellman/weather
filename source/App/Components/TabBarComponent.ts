@@ -1,4 +1,3 @@
-import CurrentWeatherService from '@services/CurrentWeatherService';
 import { Component, NgModule } from '@angular/core';
 import { ITabOption } from '@app/types';
 import '@styles/TabBarStyles.less';
@@ -13,6 +12,9 @@ import '@styles/TabBarStyles.less';
         [text]="tabOption.text"
         (click)="onClickTab(index)"
       ></tab-option>
+      <local-weather-block
+        [location]="'Bigtown, USA'"
+      ></local-weather-block>
     </nav>
   `
 })
@@ -26,15 +28,7 @@ export default class TabBarComponent {
     { text: 'Cities' }
   ];
 
-  public constructor (currentWeatherService: CurrentWeatherService) {
-    currentWeatherService.subscribe(this.onCurrentWeatherUpdate);
-  }
-
   private onClickTab (index: number): void {
     this.selectedTabIndex = index;
-  }
-
-  private onCurrentWeatherUpdate (): void {
-    console.log('Current weather updated!');
   }
 }
