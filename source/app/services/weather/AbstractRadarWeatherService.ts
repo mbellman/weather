@@ -1,4 +1,4 @@
-import { AbstractWeatherService } from '@services/Weather/AbstractWeatherService';
+import { AbstractWeatherService } from '@services/weather/AbstractWeatherService';
 import { Final, Implements } from 'trampoline-framework';
 
 export interface IRadarData { }

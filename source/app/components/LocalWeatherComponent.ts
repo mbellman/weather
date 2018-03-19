@@ -1,7 +1,7 @@
 import { Bound, Implements } from 'trampoline-framework';
 import { Component, Input, NgZone } from '@angular/core';
-import { ILocalWeatherReport, LocalWeatherService } from '@services/Weather/LocalWeatherService';
-import { Zoned } from '@app/Resources/decorators';
+import { ILocalWeatherReport, LocalWeatherService } from '@services/weather/LocalWeatherService';
+import { Zoned } from '@app/resources/decorators';
 import { ILocation, LocationService } from '@services/LocationService';
 import '@styles/LocalWeatherStyles.less';
 

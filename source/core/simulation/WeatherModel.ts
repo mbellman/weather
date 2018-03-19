@@ -1,5 +1,5 @@
 import { Automated, Autowired, Callback, EventManager, Poll, Wired } from 'trampoline-framework';
-import { Geography } from '@core/Simulation/Geography';
+import { Geography } from '@core/simulation/Geography';
 
 @Wired
 @Automated
