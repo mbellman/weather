@@ -10,7 +10,7 @@ import '@styles/TabOptionStyles.less';
     </div>
   `
 })
-export default class TabOptionComponent {
+export class TabOptionComponent {
   @Input() public selected: boolean;
   @Input() public text: string;
 }

@@ -1,8 +1,8 @@
-import { CloudRadarWeatherService } from '@services/CloudRadarWeatherService';
-import { ForecastWeatherService } from '@services/ForecastWeatherService';
-import { LocalWeatherService } from '@services/LocalWeatherService';
+import { CloudRadarWeatherService } from '@services/Weather/CloudRadarWeatherService';
+import { ForecastWeatherService } from '@services/Weather/ForecastWeatherService';
+import { LocalWeatherService } from '@services/Weather/LocalWeatherService';
 import { NgModule, NgZone } from '@angular/core';
-import { PrecipitationRadarWeatherService } from '@services/PrecipitationRadarWeatherService';
+import { PrecipitationRadarWeatherService } from '@services/Weather/PrecipitationRadarWeatherService';
 
 @NgModule({
   providers: [
@@ -12,4 +12,4 @@ import { PrecipitationRadarWeatherService } from '@services/PrecipitationRadarWe
     PrecipitationRadarWeatherService
   ]
 })
-export default class WeatherServiceModule { }
+export class WeatherServiceModule { }

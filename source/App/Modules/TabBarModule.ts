@@ -1,21 +1,16 @@
-import LocalWeatherBlockComponent from '@components/LocalWeatherBlockComponent';
-import TabBarComponent from '@components/TabBarComponent';
-import TabOptionComponent from '@components/TabOptionComponent';
-import WeatherServiceModule from '@modules/WeatherServiceModule';
 import { BrowserModule } from '@angular/platform-browser';
+import { LocalWeatherComponent } from '@components/LocalWeatherComponent';
 import { NgModule } from '@angular/core';
+import { TabBarComponent } from '@components/TabBarComponent';
+import { TabOptionComponent } from '@components/TabOptionComponent';
 
 @NgModule({
-  imports: [
-    BrowserModule
-  ],
-  exports: [
-    TabBarComponent
-  ],
+  imports: [ BrowserModule ],
+  exports: [ TabBarComponent ],
   declarations: [
     TabBarComponent,
     TabOptionComponent,
-    LocalWeatherBlockComponent
+    LocalWeatherComponent
   ]
 })
-export default class TabBarModule { }
+export class TabBarModule { }

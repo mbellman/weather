@@ -12,13 +12,11 @@ import '@styles/TabBarStyles.less';
         [text]="tabOption.text"
         (click)="onClickTab(index)"
       ></tab-option>
-      <local-weather-block
-        [location]="'Bigtown, USA'"
-      ></local-weather-block>
+      <local-weather></local-weather>
     </nav>
   `
 })
-export default class TabBarComponent {
+export class TabBarComponent {
   private selectedTabIndex: number = 0;
 
   private readonly tabOptions: ITabOption[] = [

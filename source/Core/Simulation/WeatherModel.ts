@@ -1,8 +1,9 @@
 import { Automated, Autowired, Callback, EventManager, Poll, Wired } from 'trampoline-framework';
+import { Geography } from '@core/Simulation/Geography';
 
 @Wired
 @Automated
-export default class WeatherModel {
+export class WeatherModel {
   public static readonly CYCLE_FREQUENCY: number = 1000;
   public static readonly CYCLE_TIME: number = 1000;
   public temperature: number = 50;

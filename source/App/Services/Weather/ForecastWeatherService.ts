@@ -1,4 +1,4 @@
-import AbstractWeatherService from '@services/AbstractWeatherService';
+import { AbstractWeatherService } from '@services/Weather/AbstractWeatherService';
 import { Implements } from 'trampoline-framework';
 import { Injectable } from '@angular/core';
 

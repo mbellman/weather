@@ -6,7 +6,8 @@ import '@styles/AppStyles.less';
   template: `
     <div class="app">
       <tab-bar></tab-bar>
+      <map></map>
     </div>
   `
 })
-export default class AppComponent { }
+export class AppComponent { }
